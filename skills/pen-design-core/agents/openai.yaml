@@ -1,0 +1,6 @@
+interface:
+  display_name: "Pen 设计核心"
+  short_description: "共享 Pen 盘点、设计访谈、执行、恢复与质量核验流程"
+  default_prompt: "使用 $pen-design-core 安全处理这个 Pen 设计请求。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Pen 组件构建"
+  short_description: "构建或改进一个可复用 Pen 组件、必要状态与代表实例"
+  default_prompt: "使用 $pen-component 构建或改进这个可复用 Pen 组件。"
+policy:
+  allow_implicit_invocation: false

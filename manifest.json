@@ -1,0 +1,19 @@
+{
+  "name": "pen-command-suite",
+  "version": "0.1.0",
+  "skills": [
+    {"name": "ask-pen", "invocation": "explicit", "depends_on": ["pen-system", "pen-component", "pen-page", "pen-review", "pen-polish", "pen-sync-code"]},
+    {"name": "pen-system", "invocation": "explicit", "depends_on": ["pen-design-core"]},
+    {"name": "pen-component", "invocation": "explicit", "depends_on": ["pen-design-core"]},
+    {"name": "pen-page", "invocation": "explicit", "depends_on": ["pen-design-core"]},
+    {"name": "pen-review", "invocation": "explicit", "depends_on": ["pen-design-core"]},
+    {"name": "pen-polish", "invocation": "explicit", "depends_on": ["pen-design-core"]},
+    {"name": "pen-sync-code", "invocation": "explicit", "depends_on": ["pen-design-core"]},
+    {"name": "pen-design-core", "invocation": "implicit", "depends_on": []}
+  ],
+  "install_policy": {
+    "overwrite": false,
+    "default_mode": "dry-run",
+    "recommended_scope": "project-local"
+  }
+}

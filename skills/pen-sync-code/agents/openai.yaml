@@ -1,0 +1,6 @@
+interface:
+  display_name: "Pen 代码同步"
+  short_description: "双向对齐 Pen 变量、组件、布局、状态与项目代码"
+  default_prompt: "使用 $pen-sync-code 对齐这个 Pen 设计与项目代码。"
+policy:
+  allow_implicit_invocation: false

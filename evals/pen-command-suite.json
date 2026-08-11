@@ -1,0 +1,48 @@
+{
+  "suite": "pen-command-suite-zh",
+  "version": 1,
+  "cases": [
+    {
+      "id": "system-new-foundations",
+      "command": "pen-system",
+      "prompt": "使用 $pen-system 为这个已有项目整理一套支持浅色和深色主题的设计标准。现在 Pen 和代码里都有一些颜色与组件，先不要覆盖任何东西，全部按推荐方案提问。",
+      "must": ["读取 Pen 与代码侧现状", "按类别确认 source of truth", "询问 themes、平台和长期文档位置", "先形成 design contract", "优先复用或修复 foundations"],
+      "must_not": ["直接写入", "全量覆盖现有 tokens", "顺带构建完整页面"]
+    },
+    {
+      "id": "component-upload-button",
+      "command": "pen-component",
+      "prompt": "使用 $pen-component 构建上传按钮组件，需要默认、上传中、成功、失败、禁用状态，中文界面。先检查项目里有没有能复用的 Button。",
+      "must": ["盘点 local/imported/code candidates", "确认 user job、props/slots 与 states", "做 Reuse/Repair/Wrap/Create 判断", "修改 component source 并验证代表 instances"],
+      "must_not": ["只凭视觉相似复用", "创建平行设计系统", "重做所属页面"]
+    },
+    {
+      "id": "page-account-security",
+      "command": "pen-page",
+      "prompt": "使用 $pen-page 组装账号安全页，保留现有导航和设计系统，覆盖桌面与手机，还要有加载、空数据和错误状态。先问我真正需要决定的问题。",
+      "must": ["读取已有页面、components 与真实 content 约定", "询问 primary action、responsive targets 与视觉方向", "复用现有 assets", "按 skeleton/content/surface 小批执行", "验证全部状态"],
+      "must_not": ["询问能从项目查到的事实", "从 primitives 重建所有组件", "只做桌面等比缩小"]
+    },
+    {
+      "id": "review-read-only",
+      "command": "pen-review",
+      "prompt": "使用 $pen-review 只读检查当前结算页，重点看组件复用、响应式、可访问性和视觉层级。不要修复，也不要修改任何文件。",
+      "must": ["保持 read-only", "按 cheap-first evidence ladder 检查", "区分 structural fact、risk 与 visual judgment", "为每个发现提供 evidence、owner 与 acceptance check", "按影响和传播范围排序"],
+      "must_not": ["修改 Pen", "修改代码", "把主观偏好报告成确定性 bug"]
+    },
+    {
+      "id": "polish-generic-dashboard",
+      "command": "pen-polish",
+      "prompt": "使用 $pen-polish 让这个仪表盘减少 AI 模板感，但必须保留信息结构、真实内容和交互。先确认修改方向，全部采用推荐项。",
+      "must": ["把用户症状作为 hypothesis 并读取目标证据", "诊断 primary failure class", "确认替代的 brand signal", "保留 structure/content/behavior invariants", "一次只修改对应杠杆", "用同 scope before/after evidence 验证"],
+      "must_not": ["目标不可用时提前确诊", "声称完成未实际执行的 screenshot 或检查", "开放式 redesign", "同时执行多个互相冲突的 pass", "用渐变和玻璃代替诊断"]
+    },
+    {
+      "id": "sync-code-to-design-tokens",
+      "command": "pen-sync-code",
+      "prompt": "使用 $pen-sync-code 把现有代码 tokens 同步到 Pen，只做 token-only。代码是 token 权威来源，但允许 Pen 保留已确认的视觉别名。不要修改代码。",
+      "must": ["选择 Code → Design token-only profile", "读取两侧并建立 mapping contract", "区分 exact、mapped、intentional divergence、unsupported、conflict", "只写 Pen target side", "验证 bindings/themes 并更新 divergence ledger"],
+      "must_not": ["修改代码", "顺带重写 components/pages", "机械按名称覆盖语义映射"]
+    }
+  ]
+}

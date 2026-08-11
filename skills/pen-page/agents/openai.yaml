@@ -1,0 +1,6 @@
+interface:
+  display_name: "Pen 页面构建"
+  short_description: "根据已确认的设计要求与复用资产组装 Pen 页面或流程"
+  default_prompt: "使用 $pen-page 根据已确认需求组装这个 Pen 页面。"
+policy:
+  allow_implicit_invocation: false

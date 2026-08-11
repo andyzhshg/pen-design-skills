@@ -1,0 +1,6 @@
+interface:
+  display_name: "Pen 设计标准"
+  short_description: "新建或演进项目的 Pen 变量、主题、组件政策与设计标准"
+  default_prompt: "使用 $pen-system 新建或演进这个项目的 Pen 设计标准。"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Pen 页面打磨"
+  short_description: "确认方向后改善 Pen 页面的层级、节奏与视觉质感"
+  default_prompt: "使用 $pen-polish 在确认设计方向后打磨这个 Pen 页面。"
+policy:
+  allow_implicit_invocation: false

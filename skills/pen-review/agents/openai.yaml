@@ -1,0 +1,6 @@
+interface:
+  display_name: "Pen 只读体检"
+  short_description: "只读检查 Pen 的结构、系统一致性、可维护性与视觉质感"
+  default_prompt: "使用 $pen-review 检查这个 Pen 设计，但不要进行任何修改。"
+policy:
+  allow_implicit_invocation: false
