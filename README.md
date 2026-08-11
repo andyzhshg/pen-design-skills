@@ -63,9 +63,33 @@ flowchart TD
 
 ## 安装
 
-### 方式一：安装到项目（推荐）
+### 一行安装到项目（推荐）
 
-项目级安装可以让 Skill 同时读取代码、tokens、组件 API、`AGENTS.md` 和项目设计文档。
+在目标项目目录中运行：
+
+```bash
+npx skills@latest add andyzhshg/pen-design-skills
+```
+
+[`skills`](https://github.com/vercel-labs/skills) CLI 会从本仓库发现全部 8 个 Skill，自动识别 Codex，并安装到当前项目的 `.agents/skills/`；同时生成 `skills-lock.json`，用于记录安装来源。项目级安装可以让 Skill 同时读取代码、tokens、组件 API、`AGENTS.md` 和项目设计文档。
+
+安装前只查看可用 Skill：
+
+```bash
+npx skills@latest add andyzhshg/pen-design-skills --list
+```
+
+需要在所有项目中使用时，可以安装到个人环境：
+
+```bash
+npx skills@latest add andyzhshg/pen-design-skills --global
+```
+
+推荐安装完整套件。`ask-pen` 和六个业务命令都会委派给 `pen-design-core`；如果选择性安装某个业务命令，必须同时安装 `pen-design-core`。安装完成后新开一个 Codex 任务，让 Skill 列表重新加载。
+
+### 严格不覆盖安装
+
+仓库自带的 Python 安装器适合希望先 dry-run，并在发现任意同名目录时整体停止的场景：
 
 ```bash
 git clone git@github.com:andyzhshg/pen-design-skills.git
@@ -80,7 +104,7 @@ python3 scripts/install.py --dest /path/to/project/.agents/skills --apply
 
 安装器一次复制 manifest 中的全部 8 个 Skill。只要目标存在任意同名目录，就会在复制前整体停止；不会 merge、overwrite 或 delete。
 
-### 方式二：安装到个人 Codex Skills
+安装到个人 Codex Skills 时，改用个人目录作为目标：
 
 ```bash
 python3 scripts/install.py --dest "${CODEX_HOME:-$HOME/.codex}/skills"
@@ -91,7 +115,7 @@ python3 scripts/install.py --dest "${CODEX_HOME:-$HOME/.codex}/skills" --apply
 
 ### 更新
 
-安装器刻意拒绝覆盖。更新时应先 review 新版本，再由你明确移走或删除旧的 8 个目录，然后重新运行 dry-run 与 `--apply`。仓库不会替你删除现有 Skill。
+使用 `npx skills` 安装时，可以重新运行同一条 `add` 命令获取仓库的新版本，并在应用前检查 CLI 展示的变更。Python 安装器刻意拒绝覆盖；使用这种方式更新时，应先 review 新版本，再由你明确移走或删除旧的 8 个目录，然后重新运行 dry-run 与 `--apply`。仓库不会替你删除现有 Skill。
 
 ## 快速开始
 
